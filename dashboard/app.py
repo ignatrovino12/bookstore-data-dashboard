@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 from llm_service import create_chat, send_message
 
 load_dotenv()
-engine = create_engine(os.getenv("DATABASE_URL"))
+DATABASE_URL = os.getenv("DATABASE_URL")
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, ool_recycle=600)
 
 st.set_page_config( page_title="Store Analytics", layout="wide")
 st.title("Store Analytics")

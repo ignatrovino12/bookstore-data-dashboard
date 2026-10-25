@@ -6,7 +6,7 @@ import streamlit as st
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, ool_recycle=600)
 
 def get_book_count(store_id):
     query = text("""
