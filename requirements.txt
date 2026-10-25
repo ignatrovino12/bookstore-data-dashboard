@@ -1,0 +1,8 @@
+pandas>=2.0.0
+pyyaml
+pyarrow
+sqlalchemy
+psycopg[binary]
+python-dotenv
+streamlit
+google-genai
